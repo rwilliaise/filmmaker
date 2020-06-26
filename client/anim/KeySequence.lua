@@ -19,8 +19,10 @@ function KeySequence:ForceAdd(Value, Time)
 	table.insert(Sequence, Key.new(Value, Time))
 end
 
--- TODO: Find out how exactly to interpolate differently 
+-- DONE: Find out how exactly to interpolate differently 
 -- between keys.
+--
+-- Also found out - we don't even need this! Too bad!
 function KeySequence:Lagrange(Time)
 	local n = self.Sequence
 	local Out = 0
