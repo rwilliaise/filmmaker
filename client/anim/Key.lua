@@ -7,7 +7,9 @@ Key.__index = Key
 function Key.new(Value, Time)
 	return setmetatable({
 		Value = Value,
-		Time = Time
+		Time = Time,
+		Bezier = {0.5,0.5,
+				  0.5,0.5} -- linear easing
 	}, Key)
 end
 
