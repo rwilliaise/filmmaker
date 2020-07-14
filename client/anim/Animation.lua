@@ -1,3 +1,7 @@
+--[[
+	We need a specific Animation class simply because it would streamline saving and
+	the actual animation process. It's gonna save a lot of time down the road.
+]]
 local KeySequence = script.Parent:WaitForChild("KeySequence")
 
 --[[
