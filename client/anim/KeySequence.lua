@@ -1,5 +1,5 @@
 --[[
-	Basically storage for keys for a given object.
+	Practical storage for keys for a given object.
 ]]
 
 local Key = require(script.Parent:WaitForChild("Key"))
@@ -29,8 +29,11 @@ end
 	TODO: Add another function to manipulate indiviual keys.
 ]]
 function KeySequence:ForceAdd(Value, Time)
+	Value = Value or self.DefaultValue
 	assert(typeof(self.Object[self.Index]) == typeof(Value), "Incorrect key type!")
-	table.insert(Sequence, Key.new(Value, Time))
+	local Key = Key.new(Value, Time)
+	table.insert(Sequence, Key)
+	return Key -- need to be able to manipulate keys
 end
 
 
