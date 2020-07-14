@@ -1,11 +1,19 @@
+--[[
+	Basically storage for keys for a given object.
+]]
+
 local Key = require(script.Parent:WaitForChild("Key"))
 local Ease = require(script.Parent:WaitForChild("Easing"))
 
 local KeySequence = {}
 KeySequence.__index = KeySequence
 
--- base constructor. index would be the CFrame in
--- Object.CFrame as an example.
+--[[
+	Constructor; takes in 3 values:
+		Object - the actual object being manipulated
+		Index - the index of the object being manipulated (i.e. CFrame or Position)
+		DefaultValue - the default value returned when there are no keys.
+]]
 function KeySequence.new(Object, Index, DefaultValue)
 	setmetatable({
 		Object = Object,
@@ -15,18 +23,25 @@ function KeySequence.new(Object, Index, DefaultValue)
 	}, KeySequence)
 end
 
--- Add a key to the sequence
+--[[
+	Stores a key in the sequence for later use.
+
+	TODO: Add another function to manipulate indiviual keys.
+]]
 function KeySequence:ForceAdd(Value, Time)
 	assert(typeof(self.Object[self.Index]) == typeof(Value), "Incorrect key type!")
 	table.insert(Sequence, Key.new(Value, Time))
 end
 
--- Converting this to a function of time. Fun!
+
+--[[
+	Gets the value 
+]]
 function KeySequence:Get(Time)
 	local Key1, Key2
 	local Largest = 0
 	local LargestKey = nil
-	-- Get the key right before time Time
+	-- we need to get the keys right after and before the time Time
 	for k, v in pairs(self.Sequence) do
 		if v.Time > Time then continue end
 		if v.Time < Largest then continue end
@@ -35,14 +50,13 @@ function KeySequence:Get(Time)
 	end
 	local Smallest = math.huge
 	local SmallestKey = nil
-	-- Get the key right after or during time Time
 	for k, v in pairs(self.Sequence) do
 		if v.Time < Time then continue end
 		if v.Time > Smallest then continue end
 		Smallest = v.Time
 		SmallestKey = v
 	end
-	-- make sure both of them arent nil by the time we start screwing around with their values
+	-- have to make sure neither of them are nil so the entire thing doesnt blow up with errors
 	if not SmallestKey then SmallestKey = LargestKey end
 	if not LargestKey then LargestKey = SmallestKey end
 	if not SmallestKey and not LargestKey then return self.Default end
@@ -57,10 +71,10 @@ function KeySequence:Get(Time)
 	return EasingFunction(NormalizedTime)
 end
 
--- DONE: Find out how exactly to interpolate differently 
--- between keys.
---
--- Also found out - we don't even need this! Too bad!
+--[[
+	Not currently used, however was originally intended for interpolation. However,
+	this just calculates a spline. Could be used for later, so I'm keeping it for now.
+]]
 function KeySequence:Lagrange(Time)
 	local n = self.Sequence
 	local Out = 0

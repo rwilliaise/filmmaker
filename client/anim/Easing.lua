@@ -1,14 +1,11 @@
------------------------
--- 
--- https://github.com/gre/bezier-easing/
--- BezierEasing - use bezier curve for transition easing function
---
--- Ported to Lua by Iplaydev
--- by Gaëtan Renaudeau 2014 - 2015 - MIT License
--- 
--- Created for Filmmaker, a project from the TBJ Team.
---
------------------------
+--[[
+	Used to create better looking and more natural looking easing, instead of using
+	preset easing functions. Probably could use this with Lagrange or another spline
+	calculation function to easily calculate a nice looking curve to animate
+	something.
+
+	Originally created by Mozilla. Ported to Lua by Iplaydev.
+]]
 
 local NEWTON_ITERATIONS = 4
 local NEWTON_MIN_SLOPE = 0.001
@@ -40,7 +37,7 @@ local function CalculateSlope(t, a1, a2)
 	return 3 * A(a1, a2) * t * t + 2 * B(a1, a2) * t + C(a1)
 end
 
--- Also called binary subdivide
+-- also called binary subdivide
 local function CalculateDichotomic(x, a, b, x1, x2)
 	local currX, currT, i = 0
 	while (math.abs(currX) > SUBDIVISION_PRECISION and (i += 1) < SUBDIVISION_MAX_ITERATIONS) do
@@ -83,6 +80,7 @@ return function(x1, y1, x2, y2)
 		SampleValues[i] = CalculateBezier(i * kSampleStepSize, x1, x2) 
 	end
 
+	-- calculate the t at a given x so we can calculate the final output using the y bezier.
 	local function CalculateT(x)
 		local IntervalStart = 0
 		local CurrentSample = 1
