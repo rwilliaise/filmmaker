@@ -1,7 +1,10 @@
 --[[
 	Stores the value, time and easing data for each key so I don't need to
-	create a new table for each key. Literally only used to store data -
-	actually don't even need the metatables. Too bad!
+	create a new table for each key. The OOP is kinda pointless, however its
+	pretty nice.
+
+	Eventually I will need to implement a :new overload for the constructor
+	so I can duplicate certain keys. For now, however, this is a fine impl.
 ]]
 
 local Key = {}

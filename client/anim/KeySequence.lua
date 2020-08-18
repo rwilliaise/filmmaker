@@ -1,5 +1,5 @@
 --[[
-	Practical storage for keys for a given object.
+	Easy storage for keys for a given object.
 ]]
 
 local Key = require(script.Parent:WaitForChild("Key"))
@@ -38,7 +38,7 @@ end
 
 
 --[[
-	Gets the value 
+	Gets the value at a given point in time.
 ]]
 function KeySequence:Get(Time)
 	local Key1, Key2

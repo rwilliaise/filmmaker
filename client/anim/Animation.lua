@@ -1,6 +1,18 @@
 --[[
-	We need a specific Animation class simply because it would streamline saving and
-	the actual animation process. It's gonna save a lot of time down the road.
+	Handles everything for animating a scene. There is an animation, which you can
+	add specific "AnimatedObjects" to. These AnimatedObjects basically handle the
+	keysequences and essentially everything keyframe related for a specific object.
+
+	Speaking of KeyFrames and KeySequences, there is a sort of hierarchy for these
+	key objects.
+
+	- Animation stores:
+		- AnimatedObject stores:
+			- KeySequence stores:
+				- Keys
+
+	Each stores multiple of the next, all the way down to the Keys, which store a
+	single value, along with the bezier easing data.
 ]]
 local KeySequence = script.Parent:WaitForChild("KeySequence")
 

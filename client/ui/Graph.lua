@@ -25,14 +25,21 @@ local function RenderLine(point1, point2, frame)
 	return slope
 end
 
+--[[
+	Simple constructor.
+]]
 function graph.new(Resolution, KeySequence)
-	return setmetatable({Resolution = Resolution, 
-						KeySequence = KeySequence,
-						Children = {}}, graph) 
+	return setmetatable({
+							Resolution = Resolution, 
+							KeySequence = KeySequence
+						}, graph) 
 end
 
-function graph:Update()
-
+--[[
+	Used to update the graph display with new information.
+]]
+function graph:Update(Start, End, Zoom)
+	local KeySequence = self.KeySequence
 end
 
 return graph

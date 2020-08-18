@@ -1,3 +1,6 @@
+--[[
+	Supposed to be an easy-to-use, OOP based tree ui. Still working on both of those.
+]]
 local tree = {}
 tree.__index = tree
 

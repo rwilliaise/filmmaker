@@ -1,3 +1,8 @@
+--[[
+	This server script is meant for the standalone game. Speaking of the standalone,
+	I need to seperate the standalone and plugin versions eventually. Perhaps a 
+	different repo?
+]]
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local InsertAsset = require(script:WaitForChild("InsertAsset"))

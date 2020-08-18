@@ -74,7 +74,6 @@ return function(x1, y1, x2, y2)
 
 	if x1 == y1 and x2 == y2 then return CalculateLinear end
 
-	-- calculate the samples beforehand for maximal O P T I M I Z A T I O N
 	local SampleValues = {}
 	for i = 0, kSplineTableSize - 1 do
 		SampleValues[i] = CalculateBezier(i * kSampleStepSize, x1, x2) 

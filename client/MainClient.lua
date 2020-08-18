@@ -10,4 +10,6 @@ local MainUI = require(script:WaitForChild("MainUI"))
 
 local MainAnimation = Animation.new() -- TODO: saving
 
+MainUI.Initialize()
+
 -- animation manipulation code goes here

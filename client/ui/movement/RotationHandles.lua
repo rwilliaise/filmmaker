@@ -1,3 +1,8 @@
--- TODO: create RotationHandles.lua
+local Handles = {}
+Handles.__index = Handles
 
-return nil
+function Handles.new()
+
+end
+
+return Handles

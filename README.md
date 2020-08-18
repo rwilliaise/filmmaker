@@ -1,5 +1,5 @@
 # Filmmaker
-An in-house animation studio created inside the ROBLOX game engine. Main difference between the default ROBLOX animation studio and Filmmaker will be the introduction of bezier easing - basically using the same industry standard techniques for easing as the animation industry have been for years. In fact, my implementation might be more primitive. I am not entirely sure, though.
+A (hopefully) in-house animation studio created inside the ROBLOX game engine. Main difference between the default ROBLOX animation studio and Filmmaker will be the introduction of bezier easing - basically using the same industry standard techniques for easing as the animation industry have been for years. In fact, my implementation might be more primitive. I am not entirely sure, though.
 
 ## Boring lists
 Lists of things that need to be done eventually. Probably should use the Projects function in Github, however I am too lazy to set that up.
@@ -14,8 +14,9 @@ Lists of things that need to be done eventually. Probably should use the Project
 	- [x] Better interpolation ?
 		- [x] Read up on polynomial interpolation
 	- [x] Completely re-interpret my life and add Bezier interpolation
+	- [ ] FABRIK implementation of IK
 - [ ] Plugin
-	- [ ] Support for IK rigs
+	- [ ] Add support for Roblox-generated IK rigs.
 - [ ] Standalone
 	- [ ] Unlimited asset importing
 		- [ ] Reading .rbxm file types

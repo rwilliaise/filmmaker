@@ -1,3 +1,10 @@
 -- TODO: Make HttpProxy.lua
 
-return nil
+local Proxy = {}
+local URL = "" -- TODO
+
+function Proxy.Request()
+
+end
+
+return Proxy
