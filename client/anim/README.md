@@ -1,5 +1,5 @@
 # `../client/anim/`
-Everything related to aniamtion, easing, and the like. Important files to note will be listed within this file.
+Everything related to animation, easing, and the like. Important files to note will be listed within this file.
 
 ## `./Animation.lua`
 Basically is the backbone of an entire animation scene, from the start to finish. This file handles both animation of indiviual objects and their indicies.
