@@ -4,6 +4,8 @@
 
 local HttpProxy = require(script.Parent:WaitForChild("HttpProxy"))
 
+local Magic = "rb" -- TODO: Find the .rbxm binary magic.
+
 --[[
 	Used to get an asset from the asset delivery endpoint so we don't have the
 	opressive limitations of InsertService. Not sure if there is entirely a

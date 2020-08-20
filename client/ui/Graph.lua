@@ -28,8 +28,9 @@ end
 --[[
 	Simple constructor.
 ]]
-function graph.new(Resolution, KeySequence)
+function graph.new(Frame, Resolution, KeySequence)
 	return setmetatable({
+							Frame = Frame,
 							Resolution = Resolution, 
 							KeySequence = KeySequence
 						}, graph) 
