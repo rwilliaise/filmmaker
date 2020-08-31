@@ -1,5 +1,7 @@
--- Rig an R6 model into IK.
-
+--[[
+	For R6 I have to feign the existence of multiple joints through stylistic
+	thingmabobbers.
+]]
 local InverseKinematics = require(script:WaitForChild("InverseKinematics"))
 
 local IK6 = {}
